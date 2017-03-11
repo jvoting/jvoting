@@ -1,11 +1,11 @@
 package Servlets;
 
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 
 
@@ -35,12 +38,26 @@ public class VoteServlet  extends HttpServlet{
 	    ArrayList<String> result = getStringFromInputStream(fileContent);
 	    // ... (do your job here)
 	    PrintWriter  pr = response.getWriter();
+	    //commentt json
+	    JSONObject obj = new JSONObject();
+	    JSONArray jsonArray = new JSONArray();
+	    
+	     
+
 	    for(String item:result){
 	    pr.println(item);
+	    jsonArray.add(item);
+	    System.out.println(item);
 	    }
+	   /* obj.put("listecandidate",jsonArray );
+	    try(FileWriter file = new FileWriter("/home/dev1/sample.json");) {
+        System.out.println("hohohoho" + jsonArray);
+        file.write(obj.toJSONString());
+        file.flush();
+	    }*/
 	    
 	    
-	    System.out.println(result);
+	    
 	    
 	   /* InputStream  is = new URL("http://www.preflib.org/data/election/dots/").openStream();
 	    String resultUrl = getStringFromInputStream(is);
