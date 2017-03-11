@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+<welcome-file-list>
+    <welcome-file>fileFromUrl.jsp</welcome-file>
+</welcome-file-list>
+  <servlet>
+    <servlet-name>fileFromUrl</servlet-name>
+    <servlet-class>servlets.FileFromURLServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fileFromUrl</servlet-name>
+    <url-pattern>/FileFromURLServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

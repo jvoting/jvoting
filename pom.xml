@@ -4,6 +4,35 @@
   <artifactId>jVoting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <repositories>  
+    <repository>  
+      <id>jboss-public-repository-group</id>  
+      <name>JBoss Public Repository Group</name>  
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>  
+      <layout>default</layout>  
+      <releases>  
+        <enabled>true</enabled>  
+        <updatePolicy>never</updatePolicy>  
+      </releases>  
+      <snapshots>  
+        <enabled>true</enabled>  
+        <updatePolicy>never</updatePolicy>  
+      </snapshots>  
+    </repository>  
+  </repositories>  
+  <pluginRepositories>  
+    <pluginRepository>  
+      <id>jboss-public-repository-group</id>  
+      <name>JBoss Public Repository Group</name>  
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>  
+      <releases>  
+        <enabled>true</enabled>  
+      </releases>  
+      <snapshots>  
+        <enabled>true</enabled>  
+      </snapshots>  
+    </pluginRepository>  
+  </pluginRepositories>
   <dependencies>
     <dependency>
       <groupId>javax.activation</groupId>
