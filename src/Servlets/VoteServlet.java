@@ -40,28 +40,69 @@ public class VoteServlet  extends HttpServlet{
 	    PrintWriter  pr = response.getWriter();
 	    //commentt json
 	    JSONObject obj = new JSONObject();
-	    JSONArray jsonArray = new JSONArray();
-	    
+	    JSONArray jsonCandidats = new JSONArray();
+	    JSONArray jsonVotes = new JSONArray();
+	    int i=0,j=1,nbcandidats=0;
+	   
 	     
 
 	    for(String item:result){
-	    pr.println(item);
-	    jsonArray.add(item);
-	    System.out.println(item);
+	    	
+	   
+	    if (item.matches("^-?\\d+$")){
+	   	nbcandidats= Integer.parseInt(item);	
+	    	
+	    } else if(item.matches(".*[a-zA-Z].*")){
+	    	i++;
+	    	String[] parts = item.split(",");
+	    	JSONObject objectCandidat = new JSONObject();
+	    	objectCandidat.put("Name", parts[1]);
+	    	objectCandidat.put("id", Integer.parseInt(parts[0]));
+	    	jsonCandidats.add(objectCandidat);
+	    	
+	    	
+	    	
 	    }
-	   /* obj.put("listecandidate",jsonArray );
+	    else if ( result.indexOf(item) != nbcandidats+1) {
+	    	
+	    	String[] parts = item.split(",");
+	    	
+	    	
+	    	
+	    	ArrayList<Integer> preferenceArray = new ArrayList<Integer>();
+	    	JSONObject objectVote = new JSONObject();
+	    	objectVote.put("nombreElecteurs", Integer.parseInt(parts[0]));
+	    	for(j=1; j< parts.length; j++) {
+	    	
+	    		preferenceArray.add(Integer.parseInt(parts[j]));   		
+	    	}
+	        objectVote.put("preferences",preferenceArray);
+	    	jsonVotes.add(objectVote);
+	    	
+	    }
+	    
+	    //jsonArray.add(item);
+	    //System.out.println(item);
+	    }
+	    
+	    System.out.println(i);
+	    
+	    obj.put("listecandidates",jsonCandidats);
+	    obj.put("Votes",jsonVotes);
+	    obj.put("nombreDeCandidats",nbcandidats);
+	    
+	   
 	    try(FileWriter file = new FileWriter("/home/dev1/sample.json");) {
-        System.out.println("hohohoho" + jsonArray);
         file.write(obj.toJSONString());
         file.flush();
-	    }*/
-	    
+	    }
+	    pr.println("Votre fichier json est cree");
 	    
 	    
 	    
 	   /* InputStream  is = new URL("http://www.preflib.org/data/election/dots/").openStream();
 	    String resultUrl = getStringFromInputStream(is);
-	    pr.println(resultUrl);
+	    
 	    System.out.println(resultUrl);*/
 	    
 	    
