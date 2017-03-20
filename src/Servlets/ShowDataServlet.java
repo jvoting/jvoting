@@ -17,49 +17,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-
-
-
-
-
-
 @WebServlet("/upload")
 @MultipartConfig
-
 
 public class ShowDataServlet  extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    
-		 Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
-	    String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+		Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
 	    InputStream fileContent = filePart.getInputStream();
-	    ArrayList<String> result = getStringFromInputStream(fileContent);
-	    // ... (do your job here)
-	    PrintWriter  pr = response.getWriter();
-	    
-	    
-	     
+	    String result = getStringFromInputStream(fileContent);
 
-	    for(String item:result){
-	      pr.println(item);
-	    }
+	    request.setAttribute("json", result);
+        request.getRequestDispatcher("/showJson.jsp").forward(request, response);
 	    
+	    //PrintWriter  pr = response.getWriter();
 	    
-	    
+	    //for(String item:result){
+	    //	pr.println(item);
+	    //}
+
 	}
 
-	private static ArrayList<String> getStringFromInputStream(InputStream is) {
+	private static String getStringFromInputStream(InputStream is) {
 
 		BufferedReader br = null;
-		ArrayList<String> sb = new ArrayList<String>();
+		String sb = "";
 
 		String line;
 		try {
 
 			br = new BufferedReader(new InputStreamReader(is));
 			while ((line = br.readLine()) != null) {
-				sb.add(line);
+				sb += line;
 			}
 
 		} catch (IOException e) {
