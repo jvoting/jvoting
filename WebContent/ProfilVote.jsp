@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Vote Application</title>
+<title>Profil de Vote</title>
 </head>
 <body>
-<h1>Vote application</h1>
-<form action="upload" method="post" enctype="multipart/form-data">
+<h1>Profil de Vote</h1>
+<form action="jsonupload" method="post" enctype="multipart/form-data">
     <input type="file" name="json" />
     <input type="submit"  value="SEND"/>
 </form>
