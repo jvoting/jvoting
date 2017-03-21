@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;

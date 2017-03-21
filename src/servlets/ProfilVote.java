@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.FileReader;
 import java.io.IOException;
