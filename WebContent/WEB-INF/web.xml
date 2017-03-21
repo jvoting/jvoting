@@ -2,6 +2,7 @@
 <web-app>
 
 <welcome-file-list>
+
     <welcome-file>fileFromUrl.jsp</welcome-file>
 </welcome-file-list>
   <servlet>
@@ -11,5 +12,16 @@
   <servlet-mapping>
     <servlet-name>fileFromUrl</servlet-name>
     <url-pattern>/FileFromURLServlet</url-pattern>
+
+    <welcome-file>showDataServlet.jsp</welcome-file>
+</welcome-file-list>
+<servlet>
+    <servlet-name>ShowDataServlet</servlet-name>
+    <servlet-class>Servlets.ShowDataServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowDataServlet</servlet-name>
+    <url-pattern>/ShowDataServlet</url-pattern>
+
   </servlet-mapping>
 </web-app>
