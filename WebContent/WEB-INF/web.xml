@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
-
-<welcome-file-list>
-
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <welcome-file-list>
     <welcome-file>fileFromUrl.jsp</welcome-file>
-</welcome-file-list>
+  </welcome-file-list>
   <servlet>
     <servlet-name>fileFromUrl</servlet-name>
     <servlet-class>servlets.FileFromURLServlet</servlet-class>
@@ -12,15 +10,21 @@
   <servlet-mapping>
     <servlet-name>fileFromUrl</servlet-name>
     <url-pattern>/FileFromURLServlet</url-pattern>
-    </servlet-mapping>
-
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ShowDataServlet</servlet-name>
-    <servlet-class>Servlets.ShowDataServlet</servlet-class>
+    <servlet-class>servlets.ShowDataServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>InsertProfile</servlet-name>
+    <servlet-class>servlets.InsertProfile</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShowDataServlet</servlet-name>
     <url-pattern>/ShowDataServlet</url-pattern>
-
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InsertProfile</servlet-name>
+    <url-pattern>/InsertProfile</url-pattern>
   </servlet-mapping>
 </web-app>
