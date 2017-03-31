@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
 <web-app>
 
-<welcome-file-list>
-
-    <welcome-file>fileFromUrl.jsp</welcome-file>
-</welcome-file-list>
-  <servlet>
-    <servlet-name>fileFromUrl</servlet-name>
-    <servlet-class>servlets.FileFromURLServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>fileFromUrl</servlet-name>
-    <url-pattern>/FileFromURLServlet</url-pattern>
-    </servlet-mapping>
-
-<servlet>
-    <servlet-name>ShowDataServlet</servlet-name>
-    <servlet-class>Servlets.ShowDataServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ShowDataServlet</servlet-name>
-    <url-pattern>/ShowDataServlet</url-pattern>
-
-  </servlet-mapping>
 </web-app>
