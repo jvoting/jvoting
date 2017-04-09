@@ -1,0 +1,72 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+
+  <display-name>Archetype Created Web Application</display-name>
+  
+  
+  
+  <servlet>
+  <servlet-name>ProfilVoteDetail</servlet-name>
+  <servlet-class>servlet.ProfilVoteDetail</servlet-class>
+</servlet>
+
+  
+  
+  <servlet>
+  	<servlet-name>AddUser</servlet-name>
+  	<display-name>AddUser</display-name>
+  	<description></description>
+  	<servlet-class>servlet.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Authentification</servlet-name>
+  	<display-name>Authentification</display-name>
+  	<description></description>
+  	<servlet-class>servlet.Authentification</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>upload</servlet-name>
+  	<display-name>upload</display-name>
+  	<description></description>
+  	<servlet-class>servlet.AddProfilVoteServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddProfilVoteURLServlet</servlet-name>
+  	<display-name>AddProfilVoteURLServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.AddProfilVoteURLServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  
+  
+  <servlet-mapping>
+  	<servlet-name>AddUser</servlet-name>
+  	<url-pattern>/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Authentification</servlet-name>
+  	<url-pattern>/Authentification</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>upload</servlet-name>
+  	<url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddProfilVoteURLServlet</servlet-name>
+  	<url-pattern>/AddProfilVoteURLServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>ProfilVoteDetail</servlet-name>
+  <url-pattern>/ProfilVoteDetail</url-pattern>
+</servlet-mapping>
+ 
+</web-app>

@@ -1,2 +1,0 @@
-# jvoting
-ProfilDeVote
